@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="login_page">
+        <form>
+            <!-- Giao diện đăng nhập -->
+        </form>
+    </template>
+</odoo>

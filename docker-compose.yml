@@ -1,0 +1,25 @@
+version: '3.5'
+
+services:
+  postgres_17:
+    container_name: postgres_17
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-postgres}
+      POSTGRES_USER: ${db_user:-odoo}
+      POSTGRES_PASSWORD: ${db_password:-odoo}
+      PGDATA: /data/postgres
+    volumes:
+       - /home/minh/Desktop/odoo/convert_to_17to/data_odoo/postgres:/data/postgres
+    ports:
+      - "${db_port}:5432"
+    networks:
+      - postgres_17
+    restart: unless-stopped
+
+networks:
+  postgres_17:
+    driver: bridge
+
+volumes:
+    postgres_17:

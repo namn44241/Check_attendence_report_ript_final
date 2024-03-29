@@ -1,0 +1,87 @@
+<!--&lt;!&ndash; custom_user_view.xml &ndash;&gt;-->
+
+<!--<odoo>-->
+<!--    <data>-->
+<!--        &lt;!&ndash; List view for custom users &ndash;&gt;-->
+<!--        <record id="view_custom_user_tree" model="ir.ui.view">-->
+<!--&lt;!&ndash;            <field name="name">custom.user.tree</field>&ndash;&gt;-->
+<!--            <field name="model">custom.user</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree string="Custom Users">-->
+<!--&lt;!&ndash;                    <field name="name"/>&ndash;&gt;-->
+<!--                    <field name="login"/>-->
+<!--                    &lt;!&ndash; Add more fields here if needed &ndash;&gt;-->
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        &lt;!&ndash; Form view for custom users &ndash;&gt;-->
+<!--        <record id="view_custom_user_form" model="ir.ui.view">-->
+<!--&lt;!&ndash;            <field name="name">custom.user.form</field>&ndash;&gt;-->
+<!--            <field name="model">custom.user</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form string="Custom User">-->
+<!--                    <sheet>-->
+<!--                        <group>-->
+<!--                            <field name="login"/>-->
+<!--                            <field name="password"/>-->
+<!--                            &lt;!&ndash; Add more fields here if needed &ndash;&gt;-->
+<!--                        </group>-->
+<!--                    </sheet>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+<!--    </data>-->
+<!--    <menuitem id="menu_custom_user"-->
+<!--            name="Dang Nhap"-->
+<!--            action="action_custom_user"-->
+<!--            sequence="10"-->
+<!--            groups="base.group_user"/>-->
+<!--</odoo>-->
+
+<!-- custom_user_view.xml -->
+<odoo>
+    <data>
+        <!-- List view for custom users -->
+        <record id="view_custom_user_tree" model="ir.ui.view">
+            <field name="model">custom.user</field>
+            <field name="arch" type="xml">
+                <tree string="Custom Users">
+                    <field name="login"/>
+                    <!-- Add more fields here if needed -->
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form view for custom users -->
+        <record id="view_custom_user_form" model="ir.ui.view">
+            <field name="model">custom.user</field>
+            <field name="arch" type="xml">
+                <form string="Custom User">
+                    <sheet>
+                        <group>
+                            <field name="login"/>
+                            <field name="password"/>
+                            <!-- Add more fields here if needed -->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action for custom users -->
+        <record id="action_custom_user" model="ir.actions.act_window">
+            <field name="name">Custom Users</field>
+            <field name="res_model">custom.user</field>
+            <field name="view_mode">tree,form</field>
+            <!-- Add other necessary fields -->
+        </record>
+
+        <!-- Menu item for custom users -->
+        <menuitem id="menu_custom_user"
+                  name="Dang Nhap"
+                  action="action_custom_user"
+                  sequence="10"
+                  groups="base.group_user"/>
+    </data>
+</odoo>

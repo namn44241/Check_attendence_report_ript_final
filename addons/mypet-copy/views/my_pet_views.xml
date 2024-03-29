@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="my_pet_form_view" model="ir.ui.view">
+            <field name="name">my.pet.form.view</field>
+            <field name="model">my.pet</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" string="Pet Name" class="oe_edit_only"/>
+                            <h1><field name="name" placeholder="e.g. Kittie"/></h1>
+                            <label for="owner_id"/>
+                            <h3><field name="owner_id"/></h3>
+                        </div>
+                        <group name="images">
+                            <group>
+                                <field name="age"/>
+                                <field name="weight"/>
+                            </group>
+                            <group>
+                                <field name="dob"/>
+                                <field name="gender"/>
+                            </group>                            
+                        </group>
+                        <notebook>
+                            <page name="general_information" string="General Information">
+								<group>
+									<group>
+										<field name="nickname"/>
+									</group>
+									<group>
+										<label for="description" colspan="2"/>
+										<field name="description" colspan="2" nolabel="1"/>
+									</group>
+								</group>
+							</page>
+							<page name="additional_information" string="Additional Information">
+								<group>
+									<group string="Images">
+										<field name="pet_image" string="Pet's Image" widget="image"/>
+									</group>
+									<group string="Products">
+										<field name="product_ids" widget="many2many_tags"/>
+									</group>
+								</group>
+							</page>							
+						</notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="my_pet_tree_view" model="ir.ui.view">
+            <field name="name">my.pet.tree.view</field>
+            <field name="model">my.pet</field>
+            <field name="arch" type="xml">
+                <tree string="Pets" default_order="create_date desc">
+                    <field name="name"/>
+                    <field name="name"/>
+                    <field name="nickname"/>
+                    <field name="age"/>
+                    <field name="weight"/>                    
+                    <field name="dob"/>
+                    <field name="gender"/>
+                    <field name="owner_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_my_pet" model="ir.actions.act_window">
+            <field name="name">My Pet</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">my.pet</field>
+            <!-- <field name="view_type">form</field> --> <!-- Odoo 13 has removed this field -->
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('my_pet_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('my_pet_form_view')})]"/>
+        </record>
+
+        <menuitem id="menu_my_pet"
+            name="My Pet"
+            action="action_my_pet"
+            sequence="10"
+            groups="base.group_user"/>
+    </data>
+</odoo>
