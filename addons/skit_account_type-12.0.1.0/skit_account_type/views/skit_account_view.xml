@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+    
+    <!-- To Enable Account Type create option in Chart of Accounts Screen-->
+		 <record model="ir.ui.view" id="view_account_form_inherited">
+            <field name="name">skit.account.form</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_form" />
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='user_type_id']" position="replace"/>
+             	<xpath expr="//field[@name='name']" position="after">
+            		<field name="user_type_id"/>
+            	</xpath> 
+            </field>
+        </record> 
+	</data>
+</odoo>
+        
