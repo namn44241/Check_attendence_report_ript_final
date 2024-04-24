@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lich,DANG KY LICH,model_lich,base.group_user,1,1,1,1
+access_donxin,DON XIN,model_donxin,base.group_user,1,1,1,1
+access_nd,NGUOI DUNG,model_nd,base.group_user,1,1,1,1
+access_congviec,CongViec,model_congviec,base.group_user,1,1,1,1

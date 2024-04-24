@@ -1,0 +1,227 @@
+<odoo>
+    <data>
+        <!-- List view for lich -->
+        <record id="view_lich_tree" model="ir.ui.view">
+            <field name="model">lich</field>
+            <field name="arch" type="xml">
+                <tree string="DANG KI LICH">
+<!--                    <field name="ma_lich"/>-->
+                    <field name="nhan_vien"/>
+                    <field name="buoi"/>
+                    <field name="gio_bat_dau"/>
+                    <field name="gio_ket_thuc"/>
+                    <field name="ghi_chu"/>
+                    <!-- Add more fields here if needed -->
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form view for lich -->
+        <record id="view_lich_form" model="ir.ui.view">
+            <field name="model">lich</field>
+            <field name="arch" type="xml">
+                <form string="Hay Dien Lich">
+                    <sheet>
+                        <group>
+                            <field name="nhan_vien"/>
+                            <field name="buoi"/>
+                            <field name="gio_bat_dau"/>
+                            <field name="gio_ket_thuc"/>
+                            <field name="ghi_chu"/>
+                            <!-- Add more fields here if needed -->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Action cho Đăng kí lịch -->
+        <record id="action_lich" model="ir.actions.act_window">
+            <field name="name">Đăng Kí Lịch</field>
+            <field name="res_model">lich</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- List view for donxin -->
+        <record id="view_donxin_tree" model="ir.ui.view">
+            <field name="model">donxin</field>
+            <field name="arch" type="xml">
+                <tree string="DANG KI DON XIN NGHI">
+<!--                    <field name="ma_donxin"/>-->
+                    <field name="ma_nhan_vien"/>
+                    <field name="ma_quan_li"/>
+                    <field name="tieu_de"/>
+                    <field name="loai_don"/>
+                    <field name="ngay_bat_dau"/>
+                    <field name="ngay_ket_thuc"/>
+                    <field name="li_do"/>
+                    <!-- Add more fields here if needed -->
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form view for donxin -->
+        <record id="view_donxin_form" model="ir.ui.view">
+            <field name="model">donxin</field>
+            <field name="arch" type="xml">
+                <form string="Hay Dien DON XIN NGHI">
+                    <sheet>
+                        <group>
+                            <field name="ma_nhan_vien"/>
+                            <field name="ma_quan_li"/>
+                            <field name="tieu_de"/>
+                            <field name="loai_don"/>
+                            <field name="ngay_bat_dau"/>
+                            <field name="ngay_ket_thuc"/>
+                            <field name="li_do"/>
+                            <!-- Add more fields here if needed -->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action cho Đăng kí đơn xin nghỉ -->
+        <record id="action_donxin" model="ir.actions.act_window">
+            <field name="name">Đăng Kí Đơn Xin Nghỉ</field>
+            <field name="res_model">donxin</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- List view for nd -->
+        <record id="view_nd_tree" model="ir.ui.view">
+            <field name="model">nd</field>
+            <field name="arch" type="xml">
+                <tree string="ĐĂNG KÍ NGƯỜI DÙNG">
+                    <field name="ten_nguoi_dung"/>
+                    <field name="chuc_vu"/>
+                    <field name="bo_phan"/>
+                    <field name="ngay_sinh"/>
+                    <field name="gioi_tinh"/>
+                    <field name="email"/>
+                    <field name="sdt"/>
+                    <!-- Add more fields here if needed -->
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form view for nd -->
+        <record id="view_nd_form" model="ir.ui.view">
+            <field name="model">nd</field>
+            <field name="arch" type="xml">
+                <form string="NHẬP THÔNG TIN NGƯỜI DÙNG">
+                    <sheet>
+                        <group>
+                            <field name="ten_nguoi_dung"/>
+                            <field name="chuc_vu"/>
+                            <field name="bo_phan"/>
+                            <field name="ngay_sinh"/>
+                            <field name="gioi_tinh"/>
+                            <field name="email"/>
+                            <field name="sdt"/>
+                            <field name="anh"/>
+                            <!-- Add more fields here if needed -->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Action cho nd -->
+        <record id="action_nd" model="ir.actions.act_window">
+            <field name="name">ĐĂNG KÍ NGƯỜI DÙNG</field>
+            <field name="res_model">nd</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- List view -->
+        <record id="view_congviec_tree" model="ir.ui.view">
+            <field name="model">congviec</field>
+            <field name="arch" type="xml">
+                <tree string="CONG VIEC">
+                    <field name="ten_cong_viec"/>
+                    <field name='mota'/>
+                    <field name="ma_quan_li"/>
+                    <field name="thoi_han"/>
+                    <field name='trang_thai'/>
+                    <!-- Add more fields here if needed -->
+                </tree>
+            </field>
+        </record>
+        <!-- Form  -->
+        <record id="view_congviec_form" model="ir.ui.view">
+            <field name="model">congviec</field>
+            <field name="arch" type="xml">
+                <form string="Hãy chọn công việc">
+                    <sheet>
+                        <group>
+                            <field name="ten_cong_viec"/>
+                            <field name = 'mota'/>
+                            <field name="ma_quan_li"/>
+                            <field name="thoi_han"/>
+                            <field name='trang_thai'/>
+                            <!-- Add more fields here if needed -->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action for  -->
+        <record id="action_congviec" model="ir.actions.act_window">
+            <field name="name">Đăng kí công việc</field>
+            <field name="res_model">congviec</field>
+            <field name="view_mode">tree,form</field>
+            <!-- Add other necessary fields -->
+        </record>
+        <record id="sequence_congviec" model="ir.sequence">
+            <field name="name">Congviec Sequence</field>
+            <field name="code">congviec.sequence</field>
+            <field name="padding">0</field>
+        </record>
+
+
+        <!-- Menu chính -->
+        <menuitem id="menu_cns_internal_project"
+                  name="CNS INTERNAL PROJECT"
+                  sequence="10"
+                  groups="base.group_user"/>
+
+        <!-- Submenu cho Đăng kí nd -->
+        <menuitem id="menu_nd"
+                  name="Đăng Kí Người Dùng"
+                  action="action_nd"
+                  parent="menu_cns_internal_project"
+                  sequence="1"
+                  groups="base.group_user"/>
+
+        <!-- Submenu cho Đăng kí lịch -->
+        <menuitem id="menu_lich"
+                  name="Đăng Kí Lịch"
+                  action="action_lich"
+                  parent="menu_cns_internal_project"
+                  sequence="2"
+                  groups="base.group_user"/>
+
+        <!-- Submenu cho Đăng kí đơn xin nghỉ -->
+        <menuitem id="menu_donxin"
+                  name="Đăng Kí Đơn Xin Nghỉ"
+                  action="action_donxin"
+                  parent="menu_cns_internal_project"
+                  sequence="3"
+                  groups="base.group_user"/>
+
+        <menuitem id="menu_congviec"
+                  name="Đăng Kí Công Việc"
+                  action="action_congviec"
+                  parent="menu_cns_internal_project"
+                  sequence="4"
+                  groups="base.group_user"/>
+
+    </data>
+</odoo>
